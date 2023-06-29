@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4841149127189843534}
   - component: {fileID: 4841149127189843529}
   - component: {fileID: 4841149127189843528}
-  - component: {fileID: 4841149127189843531}
+  - component: {fileID: 7091959213824372946}
   m_Layer: 0
   m_Name: Emily
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4841149127189843532
 SpriteRenderer:
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &4841149127189843534
 Rigidbody2D:
   serializedVersion: 4
@@ -148,8 +148,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!58 &4841149127189843531
-CircleCollider2D:
+--- !u!70 &7091959213824372946
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,6 +180,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.52}
-  serializedVersion: 2
-  m_Radius: 0.25
+  m_Offset: {x: 0, y: 0.14}
+  m_Size: {x: 0.69, y: 0.26}
+  m_Direction: 1
