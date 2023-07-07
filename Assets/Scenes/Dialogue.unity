@@ -276,8 +276,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 2002054326}
   - component: {fileID: 2002054325}
   - component: {fileID: 2002054327}
+  - component: {fileID: 2002054328}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -573,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2924528, g: 0.28252044, b: 0.28252044, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -589,7 +590,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.1
 --- !u!222 &2002054326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -612,7 +613,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 325470172}
   lines:
-  - Hello
-  - This project is made by party E
-  - Thank You
-  textSpeed: 0.1
+  - Young and inquisitive Emily is joyfully exploring the area. A light breeze rustles
+    the foliage as birds chirp
+  - 'Emily: What a lovely day! (giggling) I wonder what adventures await me today.'
+  - '[Suddenly, a little, white mouse darting through the bushes catches Emily''s
+    eye. She decides to pursue it out of curiosity.]'
+  - 'Emily: Hold on! What''s your destination, you little mouse?'
+  - ' [The mouse scurries in the direction of a far ancient, intriguing house. Curiosity-driven
+    Emily picks up the pace and follows it.]'
+  - With overgrown vines and creaky wooden boards, the environment is unsettling.
+  - 'Emily: (whispering) This house seems like something out of a fairy tale. I can''t
+    resist exploring it!'
+  - '[Emily cautiously enters the house, stepping inside the worn entrance hall.
+    As she takes a few more steps, the fragile wooden floor gives way beneath her.] '
+  - 'Emily: (gasping) Ahhh!'
+  - '[Emily falls through the hole in the floor, losing consciousness as she lands
+    in a different room.] '
+  - '[Emily wakes up on the floor after regaining consciousness.] '
+  - 'Emily: (rubbing her head) Ouch... What happened? Where am I?'
+  - '[Emily observes a gentle glow coming from the room''s corners . Curiosity piqued,
+    she cautiously looks around.]'
+  - 'Emily: What are those, exactly?'
+  - '[A group of delicate, shimmering fairies with luminous wings emerges from the
+    shadows.] '
+  textSpeed: 0.05
+--- !u!114 &2002054328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002054323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
