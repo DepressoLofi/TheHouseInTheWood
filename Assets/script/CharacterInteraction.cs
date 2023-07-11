@@ -29,14 +29,7 @@ public class CharacterInteraction : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // Check for player input to interact with the statue
-        if (Input.GetKeyDown(KeyCode.Space) && targetStatue != null && isInteracting)
-        {
-            DialogueManager.Instance.NextDialogueLine();
-        }
-    }
+  
 
     private void Interaction()
     {
