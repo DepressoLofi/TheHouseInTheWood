@@ -26,7 +26,8 @@ public class character_movement : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetFloat("momentum", movement.sqrMagnitude);
-        if(movement != Vector2.zero) {
+        if (movement != Vector2.zero)
+        {
             animator.SetFloat("horizontal", movement.x);
             animator.SetFloat("vertical", movement.y);
 
@@ -34,7 +35,8 @@ public class character_movement : MonoBehaviour
         }
     }
 
-    void movecharacter(){
+    void movecharacter()
+    {
         movement.Normalize();
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
