@@ -11,8 +11,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] int lettersPerSecond;
 
     private DialogueS dialogue;
+    private List<string> dialogueLines;
     private int currentLineIndex = 0;
     private bool isTyping = false;
+    private bool isDialogueActive = false;
 
     public static DialogueManager Instance { get; private set; }
 
@@ -23,32 +25,42 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(DialogueS dialogue)
     {
-        this.dialogue = dialogue;
-        dialogueBox.SetActive(true);
-        StartCoroutine(TypeDialogueS(dialogue.Lines[0]));
+        if (!isDialogueActive)
+        {
+            this.dialogue = dialogue;
+            dialogueLines = dialogue.Lines;
+            currentLineIndex = 0;
+            dialogueBox.SetActive(true);
+            StartCoroutine(TypeDialogueS(dialogueLines[currentLineIndex]));
+            isDialogueActive = true;
+        }
+        else
+        {
+            NextDialogueLine();
+        }
     }
 
     public void HideDialogue()
     {
         dialogueBox.SetActive(false);
+        isDialogueActive = false;
     }
 
     public void NextDialogueLine()
     {
         if (isTyping)
         {
-            // If the text is still typing, finish typing instantly
             StopCoroutine("TypeDialogueS");
-            dialogueText.text = dialogue.Lines[currentLineIndex];
+            dialogueText.text = dialogueLines[currentLineIndex];
             isTyping = false;
         }
         else
         {
             currentLineIndex++;
 
-            if (currentLineIndex < dialogue.Lines.Count)
+            if (currentLineIndex < dialogueLines.Count)
             {
-                StartCoroutine(TypeDialogueS(dialogue.Lines[currentLineIndex]));
+                StartCoroutine(TypeDialogueS(dialogueLines[currentLineIndex]));
             }
             else
             {
@@ -59,7 +71,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeDialogueS(string line)
     {
-        dialogueText.text = "";
+        dialogueText.text = string.Empty;
         isTyping = true;
         foreach (var letter in line.ToCharArray())
         {
