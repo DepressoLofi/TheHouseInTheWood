@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class floorfalling : MonoBehaviour
 {
-    [SerializeField] float floorFallingRate = 0.1f;
-    private float delay = 2f;
-    private Vector3 initialState;
-    private Vector3 targetState;
-    private Vector3 initialLocation;
-    private Vector3 targetLocation;
-   
+    [SerializeField] float delay = 2f;
+    [SerializeField] Vector3 initialState;
+    [SerializeField] Vector3 targetState;
+    [SerializeField] Vector3 initialLocation;
+    [SerializeField] Vector3 targetLocation;
+
     void Start()
     {
         initialState = transform.localScale;
-        targetState = new Vector3 (15, 90, 0);
+        targetState = new Vector3(9.3f, 270, 0);
         initialLocation = transform.localPosition;
         targetLocation = new Vector3(0, 0, 0);
 
@@ -24,22 +23,27 @@ public class floorfalling : MonoBehaviour
     private IEnumerator StartIncreasing()
     {
         yield return new WaitForSeconds(delay);
-        Time.timeScale = 1f;
         StartCoroutine(IncreaseCollisionScale());
 
 
     }
     private IEnumerator IncreaseCollisionScale()
     {
-        targetState.y += floorFallingRate;
+   
         float elapsedTime = 0f;
-        while (elapsedTime < 60f) 
+        float duration = 60f;
+        while (elapsedTime < duration)
         {
-            transform.localScale = Vector3.Lerp(initialState, targetState, elapsedTime); 
-            transform.localPosition = Vector3.Lerp(initialLocation, targetLocation, elapsedTime);
+ 
+            float t = elapsedTime / duration;
+
+            transform.localScale = Vector3.Lerp(initialState, targetState, t);
+            transform.localPosition = Vector3.Lerp(initialLocation, targetLocation, t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        transform.localScale = targetState;
+        transform.localPosition = targetLocation;
 
 
 
