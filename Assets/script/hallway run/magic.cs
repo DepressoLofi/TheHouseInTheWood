@@ -9,7 +9,7 @@ public class Magic : MonoBehaviour
     [SerializeField] float magicSpeed = 4f;
     private Vector2 direction;
     private Rigidbody2D rb;
-    private Vector2 offset = new(0, 0.8f);
+    [SerializeField] Vector2 offset = new(0, 0.8f);
 
 
     void Start()
