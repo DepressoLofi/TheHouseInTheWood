@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class character_movement : MonoBehaviour
+public class hallwayRun : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] float speed = 5f;
@@ -37,7 +37,6 @@ public class character_movement : MonoBehaviour
 
     void movecharacter()
     {
-        movement.Normalize();
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 }
