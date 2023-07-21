@@ -6,7 +6,8 @@ public class camera_movement : MonoBehaviour
 {
     public Transform Emily;
     [SerializeField] float smoothing = 0.5f;
- 
+
+    
     void Update()
     {
         if(transform.position != Emily.position)

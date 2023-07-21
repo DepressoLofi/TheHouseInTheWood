@@ -16516,6 +16516,7 @@ GameObject:
   - component: {fileID: 910997144}
   - component: {fileID: 910997146}
   - component: {fileID: 910997147}
+  - component: {fileID: 910997148}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -16531,7 +16532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910997141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.5, y: 1.5, z: 0}
+  m_LocalPosition: {x: 154.2, y: 56.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16826,6 +16827,26 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!95 &910997148
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910997141}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b35c47cde9a60f4ca5a1f1a471baaea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &916752286
 GameObject:
   m_ObjectHideFlags: 0
@@ -78474,7 +78495,7 @@ Tilemap:
       - {fileID: -1810043534, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 86619202, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -1698816710, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 25, y: -13, z: 0}
@@ -78594,7 +78615,7 @@ Tilemap:
       - {fileID: -1810043534, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 86619202, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -1698816710, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 25, y: -9, z: 0}
@@ -78609,7 +78630,7 @@ Tilemap:
       - {fileID: -1154995011, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 1722494193, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 1820354024, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 29, y: -9, z: 0}
@@ -79254,7 +79275,7 @@ Tilemap:
       - {fileID: -2100400841, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 1542424541, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -562264606, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 21, y: 9, z: 0}
@@ -79269,7 +79290,7 @@ Tilemap:
       - {fileID: 1517136513, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -1215658581, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 1968186546, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 25, y: 9, z: 0}
@@ -79389,7 +79410,7 @@ Tilemap:
       - {fileID: -1810043534, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 86619202, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -1698816710, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: 13, z: 0}
@@ -79599,7 +79620,7 @@ Tilemap:
       - {fileID: -1810043534, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: 86619202, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
       - {fileID: -1698816710, guid: b92ae0b2be6bf724c8df2c5801a2d5e4, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: 20, z: 0}
