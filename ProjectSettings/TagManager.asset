@@ -12,7 +12,7 @@ TagManager:
   - Emily
   - Water
   - UI
-  - 
+  - fish
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bg
+    uniqueID: 2363825929
+    locked: 0
   - name: map
     uniqueID: 1692828285
     locked: 0

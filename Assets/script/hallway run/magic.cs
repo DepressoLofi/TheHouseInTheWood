@@ -6,7 +6,7 @@ using UnityEngine;
 public class Magic : MonoBehaviour
 {
     public string emilyObjectName = "Emily";
-    [SerializeField] float magicSpeed = 4f;
+    [SerializeField] float magicSpeed = 7f;
     private Vector2 direction;
     private Rigidbody2D rb;
     [SerializeField] Vector2 offset = new(0, 0.8f);

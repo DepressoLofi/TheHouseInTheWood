@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emilyObjectName: Emily
-  magicSpeed: 4
-  offset: {x: 0, y: 0.8}
+  magicSpeed: 10
+  offset: {x: 0, y: 3.19}
 --- !u!50 &1631163216496943556
 Rigidbody2D:
   serializedVersion: 4
