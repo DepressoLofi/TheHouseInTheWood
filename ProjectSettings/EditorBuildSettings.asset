@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/jellyfish.unity
     guid: bf062b8264a53e5439d91e61cd41bae6
+  - enabled: 1
+    path: Assets/Scenes/Destroyed House.unity
+    guid: 83d9bf07d306f5341ae8f35b034376b4
   m_configObjects: {}

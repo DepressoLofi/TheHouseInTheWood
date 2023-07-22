@@ -8,12 +8,16 @@ public class character_movement : MonoBehaviour
     [SerializeField] float speed = 5f;
     Vector2 movement;
     private Animator animator;
+    private bool canMove = true;
+    public float initialHorizontal;
+    public float initialVertical;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        animator.SetFloat("horizontal", initialHorizontal);
+        animator.SetFloat("vertical", initialVertical);
     }
 
     // Update is called once per frame
@@ -26,7 +30,7 @@ public class character_movement : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetFloat("momentum", movement.sqrMagnitude);
-        if (movement != Vector2.zero)
+        if (movement != Vector2.zero && canMove)
         {
             animator.SetFloat("horizontal", movement.x);
             animator.SetFloat("vertical", movement.y);
@@ -39,5 +43,10 @@ public class character_movement : MonoBehaviour
     {
         movement.Normalize();
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
     }
 }
