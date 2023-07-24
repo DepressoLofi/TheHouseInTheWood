@@ -14,12 +14,14 @@ public class fish_spawner : MonoBehaviour
     private float highestPoint;
     private float lowestPoint;
     private Collider2D[] colliders;
+    public LayerMask fishLayer;
 
     void Start()
     {
         highestPoint = transform.position.x + offset;
         lowestPoint = transform.position.x - offset;
-        colliders = new Collider2D[1]; 
+        colliders = new Collider2D[1];
+        fishLayer = LayerMask.GetMask("fish");
     }
 
     void Update()
@@ -84,7 +86,7 @@ public class fish_spawner : MonoBehaviour
 
     bool IsSpawnPositionOccupied(Vector3 spawnPosition)
     {
-        int numColliders = Physics2D.OverlapCircleNonAlloc(spawnPosition, 0.5f, colliders); 
+        int numColliders = Physics2D.OverlapCircleNonAlloc(spawnPosition, 0.5f, colliders, fishLayer); 
         return numColliders > 0;
     }
 }

@@ -6,13 +6,9 @@ public class camera_movement : MonoBehaviour
 {
     public Transform Emily;
     [SerializeField] float smoothing = 0.5f;
-    [SerializeField] float yOffset = 1.0f;
+    private float yOffset = 1.0f;
     public Vector2 minPosition;
     public Vector2 maxPosition;
-    private void Start()
-    {
-
-    }
 
     void LateUpdate()
     {
