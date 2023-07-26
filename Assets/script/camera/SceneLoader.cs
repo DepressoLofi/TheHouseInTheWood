@@ -9,14 +9,20 @@ public class SceneLoader : MonoBehaviour
     public int sceneIndex;
     public Animator transition;
     public character_movement playerMovement;
+    private BackgroundMusicManager musicManager;
 
     private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Emily").GetComponent<character_movement>();
+        musicManager = GameObject.FindGameObjectWithTag("BackgroundMusic").GetComponent<BackgroundMusicManager>();
     }
 
     public void LoadNextLevel()
     {
+        if (musicManager != null)
+        {
+            musicManager.FadeOutMusic(); 
+        }
         StartCoroutine(LoadLevel(sceneIndex));
     }
     IEnumerator LoadLevel(int levelIndex)
