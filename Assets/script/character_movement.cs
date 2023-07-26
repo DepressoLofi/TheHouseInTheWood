@@ -9,6 +9,7 @@ public class character_movement : MonoBehaviour
     Vector2 movement;
     private Animator animator;
     private bool canMove = true;
+    private bool transitioning = false;
     public float initialHorizontal;
     public float initialVertical;
 
@@ -23,14 +24,20 @@ public class character_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (canMove)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        } else
+        {
+            movement = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
     {
         animator.SetFloat("momentum", movement.sqrMagnitude);
-        if (movement != Vector2.zero && canMove)
+        if (movement != Vector2.zero  && !transitioning)
         {
             animator.SetFloat("horizontal", movement.x);
             animator.SetFloat("vertical", movement.y);
@@ -49,4 +56,9 @@ public class character_movement : MonoBehaviour
     {
         canMove = move;
     }
+    public void SetTransition(bool trans)
+    {
+        transitioning = trans;
+    }
+
 }

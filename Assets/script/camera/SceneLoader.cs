@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 {
     public int sceneIndex;
     public Animator transition;
-    public character_movement playerMovement;
+    private character_movement playerMovement;
     private BackgroundMusicManager musicManager;
 
     private void Start()
@@ -38,7 +38,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.CompareTag("Emily") && !other.isTrigger)
         {
-            playerMovement.SetCanMove(false);
+            playerMovement.SetTransition(true);
  
             LoadNextLevel();
         }
