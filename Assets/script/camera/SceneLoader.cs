@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public int sceneIndex;
+    public string sceneToLoad;
     public Animator transition;
     private character_movement playerMovement;
     private BackgroundMusicManager musicManager;
 
+    public Vector2 playerPosition;
+    public Vector2 facing;
+    public VectorValue playerStorage;
+
+
+    
     private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Emily").GetComponent<character_movement>();
@@ -23,15 +29,15 @@ public class SceneLoader : MonoBehaviour
         {
             musicManager.FadeOutMusic(); 
         }
-        StartCoroutine(LoadLevel(sceneIndex));
+        StartCoroutine(LoadLevel(sceneToLoad));
     }
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(string sceneToLoad)
     {
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +45,9 @@ public class SceneLoader : MonoBehaviour
         if (other.CompareTag("Emily") && !other.isTrigger)
         {
             playerMovement.SetTransition(true);
+
+            playerStorage.initialValue = playerPosition;
+            playerStorage.facing = facing;
  
             LoadNextLevel();
         }

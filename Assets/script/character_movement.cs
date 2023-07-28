@@ -10,18 +10,25 @@ public class character_movement : MonoBehaviour
     private Animator animator;
     private bool canMove = true;
     private bool transitioning = false;
-    public float initialHorizontal;
-    public float initialVertical;
+   
+
+    public VectorValue startingPosition;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        animator.SetFloat("horizontal", initialHorizontal);
-        animator.SetFloat("vertical", initialVertical);
+
+ 
+        animator.SetFloat("horizontal", startingPosition.facing.x);
+        animator.SetFloat("vertical", startingPosition.facing.y);
+        transform.position = startingPosition.initialValue;
+
+        
+      
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (canMove)

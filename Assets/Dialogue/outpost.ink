@@ -1,1 +1,1 @@
-This outpost is so warm... #speaker: Emily
+This outpost is warm... #speaker: Emily
