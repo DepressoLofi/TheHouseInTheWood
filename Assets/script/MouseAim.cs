@@ -16,9 +16,8 @@ public class MouseAim : MonoBehaviour
 
             
             Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            worldMousePosition.z = 0f; // Ensure z position is 0 (2D plane)
-
-            // Calculate the direction from the fire point to the mouse position
+            worldMousePosition.z = 0f; 
+            
             fireDirection = (worldMousePosition - firePoint.position).normalized;
         }
     }

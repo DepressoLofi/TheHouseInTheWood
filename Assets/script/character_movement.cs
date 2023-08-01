@@ -23,20 +23,20 @@ public class character_movement : MonoBehaviour
         animator.SetFloat("vertical", initialVertical);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        // Get the movement input
+      
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        // Normalize the movement vector to avoid diagonal movement being faster
+       
         movement = new Vector2(horizontalInput, verticalInput).normalized;
 
-        // Check for firing input
+        
         if (Input.GetMouseButtonDown(0))
         {
-            // Get the fire direction from MouseAim script and pass it to the Fire method in Weapon script
+            
             Vector2 fireDirection = mouseAim.GetFireDirection();
             weapon.Fire(fireDirection);
         }
