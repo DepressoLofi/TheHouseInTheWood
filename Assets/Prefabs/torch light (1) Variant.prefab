@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536053110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.83, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowIntensityEnabled: 1
-  m_ShadowIntensity: 0.2
+  m_ShadowIntensity: 0.15
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_Vertices:
@@ -121,15 +121,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498160730661834617, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834617, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.39
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834617, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834617, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -165,11 +165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834620, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_Name
-      value: torch light (1)
+      value: torch light (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834622, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834622, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_SortingOrder
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834622, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1406067381
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498160730661834622, guid: c7c052e99809021479829efa5b7bf7e3, type: 3}
       propertyPath: m_Materials.Array.data[0]
