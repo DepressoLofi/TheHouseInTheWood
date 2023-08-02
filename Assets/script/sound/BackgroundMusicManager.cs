@@ -10,10 +10,18 @@ public class BackgroundMusicManager : MonoBehaviour
     private bool fadingOut = false;
     private float initialVolume;
     private float timer = 0f;
+    private GameObject[] musicObj;
 
    
-    void Start()
+    void Awake()
     {
+        musicObj = GameObject.FindGameObjectsWithTag("BackgroundMusic");
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+
         bgmAudioSource = GetComponent<AudioSource>();
 
         initialVolume = bgmAudioSource.volume;
@@ -44,5 +52,10 @@ public class BackgroundMusicManager : MonoBehaviour
         bgmAudioSource.Stop();
         bgmAudioSource.volume = initialVolume;
         fadingOut = false;
+    }
+
+    public void ContinueMusic()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 }

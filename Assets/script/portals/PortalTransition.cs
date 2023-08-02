@@ -1,40 +1,50 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class SceneLoader : MonoBehaviour
+public class PortalTransition : MonoBehaviour
 {
     public string sceneToLoad;
-    public Animator transition;
     private character_movement playerMovement;
     private BackgroundMusicManager musicManager;
+
     [SerializeField] private float waitSecond = 1f;
+    [SerializeField] private string color = "Black";
+    [SerializeField] private bool musicFading = true;
+    public Animator transition;
+
 
     public Vector2 playerPosition;
+    
+
     public Vector2 facing;
     public VectorValue playerStorage;
 
-
-    
-    private void Start()
+    void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Emily").GetComponent<character_movement>();
         musicManager = GameObject.FindGameObjectWithTag("BackgroundMusic").GetComponent<BackgroundMusicManager>();
+        if (musicManager == null)
+        {
+            musicManager = null;
+        }
     }
-
     public void LoadNextLevel()
     {
-        if (musicManager != null)
+        if (musicFading == true)
         {
-            musicManager.FadeOutMusic(); 
+            musicManager.FadeOutMusic();
+        } if (musicFading == false)
+        {
+            musicManager.ContinueMusic();
         }
-        StartCoroutine(LoadLevel(sceneToLoad));
+        StartCoroutine(LoadLevel(sceneToLoad, color));
     }
-    IEnumerator LoadLevel(string sceneToLoad)
+
+    IEnumerator LoadLevel(string sceneToLoad, string color)
     {
-        transition.SetTrigger("Start");
+        transition.SetTrigger(color);
 
         yield return new WaitForSeconds(waitSecond);
 
@@ -49,8 +59,11 @@ public class SceneLoader : MonoBehaviour
 
             playerStorage.initialValue = playerPosition;
             playerStorage.facing = facing;
- 
+
             LoadNextLevel();
+
         }
     }
+
+
 }
