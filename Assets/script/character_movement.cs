@@ -10,7 +10,7 @@ public class character_movement : MonoBehaviour
     private Animator animator;
     private bool canMove = true;
     private bool transitioning = false;
-   
+
 
     public VectorValue startingPosition;
 
@@ -22,23 +22,23 @@ public class character_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
- 
+
         animator.SetFloat("horizontal", startingPosition.facing.x);
         animator.SetFloat("vertical", startingPosition.facing.y);
         transform.position = startingPosition.initialValue;
 
-        
-      
+
+
     }
 
 
     void Update()
     {
-        if (canMove){
-             float horizontalInput = Input.GetAxisRaw("Horizontal");
-             float verticalInput = Input.GetAxisRaw("Vertical");
-            movement = new Vector2(horizontalInput, verticalInput).normalized;  
-        }else
+        if (canMove) {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
+            movement = new Vector2(horizontalInput, verticalInput).normalized;
+        } else
         {
             movement = Vector2.zero;
         }
@@ -46,34 +46,37 @@ public class character_movement : MonoBehaviour
         {
             Vector2 fireDirection = mouseAim.GetFireDirection();
             weapon.Fire(fireDirection);
-    
-    }
 
-    private void FixedUpdate()
-    {
-        animator.SetFloat("momentum", movement.sqrMagnitude);
-        if (movement != Vector2.zero  && !transitioning)
-        {
-            animator.SetFloat("horizontal", movement.x);
-            animator.SetFloat("vertical", movement.y);
-
-            moveCharacter();
         }
     }
 
-    void moveCharacter()
-    {
+        private void FixedUpdate()
+        {
+            animator.SetFloat("momentum", movement.sqrMagnitude);
+            if (movement != Vector2.zero && !transitioning)
+            {
+                animator.SetFloat("horizontal", movement.x);
+                animator.SetFloat("vertical", movement.y);
 
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }
+                moveCharacter();
+            }
+        }
 
-    public void SetCanMove(bool move)
-    {
-        canMove = move;
-    }
-    public void SetTransition(bool trans)
-    {
-        transitioning = trans;
-    }
+        void moveCharacter()
+        {
+
+            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        }
+
+        public void SetCanMove(bool move)
+        {
+            canMove = move;
+        }
+        public void SetTransition(bool trans)
+        {
+            transitioning = trans;
+        }
 
 }
+
+
