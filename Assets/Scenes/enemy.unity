@@ -222,7 +222,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1024978713
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &384437873
@@ -1153,6 +1153,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7906732171700477283, guid: 222d7f3d3d17035409942b435cbf1efd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25080875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906732171700477283, guid: 222d7f3d3d17035409942b435cbf1efd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.11204478
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906732171700477283, guid: 222d7f3d3d17035409942b435cbf1efd, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008115664
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906732171700477283, guid: 222d7f3d3d17035409942b435cbf1efd, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15906538
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906732171700477283, guid: 222d7f3d3d17035409942b435cbf1efd, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -1194,3 +1210,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 6
+  healthbar: {fileID: 0}
