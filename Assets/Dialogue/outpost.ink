@@ -1,0 +1,1 @@
+This outpost is warm... #speaker: Emily
