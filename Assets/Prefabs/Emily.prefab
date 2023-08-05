@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 4841149127189843529}
   - component: {fileID: 4841149127189843528}
   - component: {fileID: 7091959213824372946}
-  m_Layer: 0
+  - component: {fileID: 1184997901}
+  - component: {fileID: 1639462624}
+  m_Layer: 3
   m_Name: Emily
   m_TagString: Emily
   m_Icon: {fileID: 0}
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4841149127189843532
 SpriteRenderer:
@@ -56,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: c5905c1ad6afd6542a09c86c3a8e68d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1406067381
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -887714793, guid: 295b3d5e14cfecd4d8832db3269e09c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,3 +186,53 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.14}
   m_Size: {x: 0.69, y: 0.26}
   m_Direction: 1
+--- !u!114 &1184997901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841149127189843533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d5d0a4db088b04790890bebbc4738d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 25
+  currentHealth: 0
+  maxMana: 20
+  currentMana: 0
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
+--- !u!114 &1639462624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841149127189843533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 7d82e6644b1d31ac00000000
+  m_ShapePath:
+  - {x: -0.16018105, y: 0.048393965, z: 0}
+  - {x: -0.1960411, y: 0.28154302, z: 0}
+  - {x: -0.37232208, y: 0.39906383, z: 0}
+  - {x: -0.2722726, y: 0.5615294, z: 0}
+  - {x: 0.047795296, y: 0.7019031, z: 0}
+  - {x: 0.2661481, y: 0.56574845, z: 0}
+  - {x: 0.39156294, y: 0.38927054, z: 0}
+  - {x: 0.17610836, y: 0.28154302, z: 0}
+  - {x: 0.18898821, y: 0.04090333, z: 0}
+  m_ShapePathHash: 508697119
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -65402

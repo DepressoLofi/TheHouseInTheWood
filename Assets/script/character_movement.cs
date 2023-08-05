@@ -10,6 +10,7 @@ public class character_movement : MonoBehaviour
     private Animator animator;
     private bool canMove = true;
     private bool transitioning = false;
+    private bool die = false;
    
 
     public VectorValue startingPosition;
@@ -31,7 +32,7 @@ public class character_movement : MonoBehaviour
 
     void Update()
     {
-        if (canMove)
+        if (canMove && !die)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -66,6 +67,11 @@ public class character_movement : MonoBehaviour
     public void SetTransition(bool trans)
     {
         transitioning = trans;
+    }
+
+    public void Killed(bool killed)
+    {
+        die = killed;
     }
 
 }
