@@ -7,6 +7,9 @@ TagManager:
   - Emily
   - BackgroundMusic
   - object
+  - Skeleton
+  - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
