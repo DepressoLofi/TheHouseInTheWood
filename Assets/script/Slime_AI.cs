@@ -6,18 +6,17 @@ public class Slime_AI : MonoBehaviour
 {
     private Animator myAnim;
     private Transform target;
-    private Enemy enemy; // Reference to the Enemy script
+    private Enemy enemy; 
     public Transform homePos;
     [SerializeField] public float speed;
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
-    [SerializeField] private float damageAmount = 1f; // Damage amount when hit by the player
-
+    [SerializeField] private float damageAmount = 1f; 
     private void Start()
     {
         myAnim = GetComponent<Animator>();
         target = FindObjectOfType<character_movement>().transform;
-        enemy = GetComponent<Enemy>(); // Initialize the reference to the Enemy script
+        enemy = GetComponent<Enemy>(); 
     }
 
     private void Update()
@@ -36,13 +35,13 @@ public class Slime_AI : MonoBehaviour
     {
         myAnim.SetBool("isMoving", true);
 
-        // Calculate the direction from slime to the player
+        
         Vector3 moveDirection = (target.position - transform.position).normalized;
 
-        // Remove any rotation effect
+        
         moveDirection.z = 0f;
 
-        // Move the slime towards the player without changing its rotation
+        
         Vector3 newPosition = transform.position + moveDirection * speed * Time.deltaTime;
         transform.position = newPosition;
     }
@@ -61,9 +60,9 @@ public class Slime_AI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) // Assuming you have a "Player" tag
+        if (collision.CompareTag("Player")) 
         {
-            // Call the TakeDamage method of the enemy when hit by the player
+            
             enemy.TakeDamage(damageAmount);
         }
     }

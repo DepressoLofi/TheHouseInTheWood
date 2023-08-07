@@ -31,16 +31,16 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // Trigger hit animation
+            
             myAnim.SetTrigger("Hit");
         }
     }
 
     private void Die()
     {
-        // Trigger death animation
+       
         myAnim.SetTrigger("Dead");
-        // Deactivate the enemy GameObject after a delay (or animation event)
+        
         Invoke("DeactivateEnemy", 1.0f);
     }
 
