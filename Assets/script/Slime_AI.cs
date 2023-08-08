@@ -7,7 +7,7 @@ public class Slime_AI : MonoBehaviour
     private Animator myAnim;
     private Transform target;
     private Enemy enemy; 
-    public Transform homePos;
+    private Vector3 homePos;
     [SerializeField] public float speed;
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
@@ -16,11 +16,14 @@ public class Slime_AI : MonoBehaviour
     {
         myAnim = GetComponent<Animator>();
         target = FindObjectOfType<character_movement>().transform;
-        enemy = GetComponent<Enemy>(); 
+        enemy = GetComponent<Enemy>();
+        
     }
 
     private void Update()
     {
+        homePos = transform.position;
+
         if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
         {
             FollowPlayer();
@@ -48,11 +51,11 @@ public class Slime_AI : MonoBehaviour
 
     public void GoOrigin()
     {
-        myAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
-        myAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
+        myAnim.SetFloat("moveX", (homePos.x - transform.position.x));
+        myAnim.SetFloat("moveY", (homePos.y - transform.position.y));
+        transform.position = Vector3.MoveTowards(transform.position, homePos, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, homePos.position) == 0)
+        if (Vector3.Distance(transform.position, homePos) == 0)
         {
             myAnim.SetBool("isMoving", false);
         }

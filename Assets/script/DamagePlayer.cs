@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DamagePlayer : MonoBehaviour
 {
-    private HealthManager healthMan ;
+    private Player emily;
     public float waitToHurt = 1f;
     public bool isTouching;
     [SerializeField]
@@ -14,7 +14,7 @@ public class DamagePlayer : MonoBehaviour
    
     void Start()
     {
-        healthMan = FindObjectOfType<HealthManager>();
+        emily = FindObjectOfType<HealthManager>();
     }
 
     

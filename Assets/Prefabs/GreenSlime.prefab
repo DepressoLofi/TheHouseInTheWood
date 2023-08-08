@@ -113,7 +113,7 @@ Transform:
   m_Children:
   - {fileID: 8625918784372750661}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8625918783776123449
 SpriteRenderer:
@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bf5f001a2c4d14897b891f6523cd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homePos: {fileID: 0}
   speed: 2
   maxRange: 5
   minRange: 0.8
@@ -441,8 +440,8 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1024978713
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &8625918784372750663
 MonoBehaviour:

@@ -6,17 +6,14 @@ public class character_movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] float speed = 5f;
-    private Vector2 movement;
+    Vector2 movement;
     private Animator animator;
     private bool canMove = true;
     private bool transitioning = false;
     private bool die = false;
-   
+
 
     public VectorValue startingPosition;
-
-    public MouseAim mouseAim; // Reference to the MouseAim script
-    public Weapon weapon; // Reference to the Weapon script
 
     void Start()
     {
@@ -39,51 +36,39 @@ public class character_movement : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-        // if (canMove) {
-        //     float horizontalInput = Input.GetAxisRaw("Horizontal");
-        //     float verticalInput = Input.GetAxisRaw("Vertical");
-        //     movement = new Vector2(horizontalInput, verticalInput).normalized;
-        // } else
-        // {
-        //     movement = Vector2.zero;
-        // }
-        if (Input.GetMouseButtonDown(0))
+        }
+        else
         {
-            Vector2 fireDirection = mouseAim.GetFireDirection();
-            weapon.Fire(fireDirection);
-
+            movement = Vector2.zero;
         }
     }
 
-        private void FixedUpdate()
+    private void FixedUpdate()
+    {
+        animator.SetFloat("momentum", movement.sqrMagnitude);
+        if (movement != Vector2.zero && !transitioning)
         {
-            animator.SetFloat("momentum", movement.sqrMagnitude);
-            if (movement != Vector2.zero && !transitioning)
-            {
-                animator.SetFloat("horizontal", movement.x);
-                animator.SetFloat("vertical", movement.y);
+            animator.SetFloat("horizontal", movement.x);
+            animator.SetFloat("vertical", movement.y);
 
-                moveCharacter();
-            }
+            movecharacter();
         }
+    }
 
-        void moveCharacter()
-        {
+    void movecharacter()
+    {
+        movement.Normalize();
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
 
-            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-        }
-
-        public void SetCanMove(bool move)
-        {
-            canMove = move;
-        }
-        public void SetTransition(bool trans)
-        {
-            transitioning = trans;
-        }
-
-}
-
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+    }
+    public void SetTransition(bool trans)
+    {
+        transitioning = trans;
+    }
 
     public void Killed(bool killed)
     {

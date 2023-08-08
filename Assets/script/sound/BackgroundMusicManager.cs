@@ -49,9 +49,9 @@ public class BackgroundMusicManager : MonoBehaviour
             yield return null;
         }
 
-        bgmAudioSource.Stop();
-        bgmAudioSource.volume = initialVolume;
+        bgmAudioSource.Stop();   
         fadingOut = false;
+        bgmAudioSource.volume = initialVolume;
     }
 
     public void ContinueMusic()
