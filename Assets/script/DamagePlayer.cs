@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class DamagePlayer : MonoBehaviour
 {
-    private Player emily;
+    private HealthManager healthMan;
     public float waitToHurt = 1f;
     public bool isTouching;
     [SerializeField]
     private int damageToGive = 10;
-   
+
     void Start()
     {
-        emily = FindObjectOfType<HealthManager>();
+        healthMan = FindObjectOfType<HealthManager>();
     }
 
-    
+
     void Update()
     {
         /*if (reloading)
@@ -29,7 +29,7 @@ public class DamagePlayer : MonoBehaviour
             }
         }*/
 
-        if(isTouching)
+        if (isTouching)
         {
             waitToHurt -= Time.deltaTime;
             if (waitToHurt <= 0)
@@ -50,7 +50,7 @@ public class DamagePlayer : MonoBehaviour
             other.gameObject.GetComponent<HealthManager>().DamagePlayer(damageToGive);
             //reloading = true;   
             // SceneManager.LoadScene("enemy");
-          
+
 
         }
     }
@@ -59,23 +59,22 @@ public class DamagePlayer : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
 
-        if(other.collider.tag== "Emily")
+        if (other.collider.tag == "Emily")
         {
             isTouching = true;
         }
-        
-        
+
+
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if(other.collider.tag == "Emily")
-        { 
+        if (other.collider.tag == "Emily")
+        {
             isTouching = false;
             waitToHurt = 2f;
         }
 
-        
+
     }
 }
-
