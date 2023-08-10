@@ -1,4 +1,4 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,4 +19,4 @@ public class EmilyHealth : MonoBehaviour
         healthBar.maxValue = healthMan.maxHealth;
         healthBar.value = healthMan.currentHealth;
     }
-}
+}*/

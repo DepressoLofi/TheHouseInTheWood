@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -20,14 +20,14 @@ public class DamagePlayer : MonoBehaviour
 
     void Update()
     {
-        /*if (reloading)
+        if (reloading)
         {
             waitToLoad -= Time.deltaTime;
             if (waitToLoad <= 0) 
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-        }*/
+        }
 
         if (isTouching)
         {
@@ -77,4 +77,4 @@ public class DamagePlayer : MonoBehaviour
 
 
     }
-}
+}*/

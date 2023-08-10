@@ -49,7 +49,7 @@ public class BackgroundMusicManager : MonoBehaviour
             yield return null;
         }
 
-        bgmAudioSource.Stop();   
+        Destroy(this.gameObject);
         fadingOut = false;
         bgmAudioSource.volume = initialVolume;
     }
