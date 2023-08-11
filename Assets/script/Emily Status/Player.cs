@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     float fade = 1f;
     private bool isDisolving = false;
 
+    private GameObject weapon;
+
 
 
     void Start()
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<character_movement>();
         shadow = GetComponent<ShadowCaster2D>();
         material = GetComponent<SpriteRenderer>().material;
+        weapon = GameObject.FindGameObjectWithTag("Weapon");
     }
 
     private void Update()
@@ -55,6 +58,8 @@ public class Player : MonoBehaviour
                 fade = 0f;
                 isDisolving=false;
                 shadow.enabled = false;
+                Destroy(weapon);
+
             }
         }
         material.SetFloat("_Fade", fade);

@@ -10,8 +10,9 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJson;
-
-    private bool playerInRange;
+    
+    [PortLabelHidden]
+    public bool playerInRange;
 
 
 
