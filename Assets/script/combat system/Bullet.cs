@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float damageAmount = 2f;
     public GameObject hitEffect;
+    public float effectDuration = 0.5f;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +18,7 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(damageAmount); 
                 GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
-                Destroy(effect, 0.5f);
+                Destroy(effect, effectDuration);
                 Destroy(gameObject);
             }        
         }
