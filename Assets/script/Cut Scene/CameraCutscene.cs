@@ -8,13 +8,18 @@ public class CameraCutscene : MonoBehaviour
     [SerializeField] private camera_movement cameraMovement;
 
     private PlayableDirector timeline;
+    public Vector2 facing;
+   
+    private Animator animator;
 
 
     private void Start()
     {
+        animator = GameObject.FindGameObjectWithTag("Emily").GetComponent<Animator>();
         cameraMovement = FindObjectOfType<camera_movement>();
         timeline = GetComponent<PlayableDirector>();
         timeline.stopped += OnTimelineStopped;
+        
         cameraMovement.InCutScene(true);
 
     }
@@ -22,6 +27,8 @@ public class CameraCutscene : MonoBehaviour
     private void OnTimelineStopped(PlayableDirector director)
     {
         cameraMovement.InCutScene(false);
+        animator.SetFloat("horizontal", facing.x);
+        animator.SetFloat("vertical", facing.y);
     }
 
 
