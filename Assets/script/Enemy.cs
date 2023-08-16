@@ -31,16 +31,16 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            
+
             myAnim.SetTrigger("Hit");
         }
     }
 
     private void Die()
     {
-       
+
         myAnim.SetTrigger("Dead");
-        
+
         Invoke("DeactivateEnemy", 1.0f);
     }
 

@@ -50,7 +50,7 @@ public class character_movement : MonoBehaviour
         }
     }
 
-        private void FixedUpdate()
+             private void FixedUpdate()
         {
             animator.SetFloat("momentum", movement.sqrMagnitude);
             if (movement != Vector2.zero && !transitioning)
