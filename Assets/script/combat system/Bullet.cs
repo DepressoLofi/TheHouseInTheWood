@@ -14,9 +14,10 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (enemy != null)
+            IDamageable damageable = other.GetComponent<IDamageable>();
+            if (damageable != null)
             {
-                enemy.TakeDamage(damageAmount); 
+                damageable.Damage(damageAmount); 
                 GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
                 Destroy(effect, effectDuration);
                 Destroy(gameObject);

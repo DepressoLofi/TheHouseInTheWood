@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     private GameObject weapon;
 
+    public bool die = false;
+
 
 
     void Start()
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour
     }
 
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
         
@@ -75,7 +77,7 @@ public class Player : MonoBehaviour
         {            
             currentHealth = 0;
             isDisolving = true;
-            playerMovement.Killed(true);
+            Killed(true);
 
            
 
@@ -115,5 +117,10 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         GameManager.Instance.emilyHealth = currentHealth;
+    }
+
+    public void Killed(bool killed)
+    {
+        die = killed;
     }
 }

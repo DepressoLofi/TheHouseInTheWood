@@ -10,7 +10,7 @@ public class character_movement : MonoBehaviour
     private Animator animator;
     private bool canMove = true;
     private bool transitioning = false;
-    private bool die = false;
+    private Player player;
 
 
     public VectorValue startingPosition;
@@ -19,20 +19,17 @@ public class character_movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+        player= GetComponent<Player>();
 
         animator.SetFloat("horizontal", startingPosition.facing.x);
         animator.SetFloat("vertical", startingPosition.facing.y);
-        transform.position = startingPosition.initialValue;
-
-
-
+        transform.position = startingPosition.initialValue; 
     }
 
 
     void Update()
     {
-        if (canMove && !die)
+        if (canMove && !player.die)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -70,9 +67,6 @@ public class character_movement : MonoBehaviour
         transitioning = trans;
     }
 
-    public void Killed(bool killed)
-    {
-        die = killed;
-    }
+    
 
 }
