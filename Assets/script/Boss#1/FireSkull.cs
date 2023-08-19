@@ -85,7 +85,7 @@ public class FireSkull : MonoBehaviour, IDamageable
         }
     }
 
-    public void Damage(float amount)
+    public void Damage(int amount, Transform p)
     {
         TakeDamage(amount);
         

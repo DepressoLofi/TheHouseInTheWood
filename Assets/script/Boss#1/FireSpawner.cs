@@ -13,7 +13,7 @@ public class FireSpawner : MonoBehaviour
 
    private void Start()
     {
-        StartCoroutine(StartSpawningAfterDelay(10f));
+        StartCoroutine(StartSpawningAfterDelay(delay));
         Debug.Log(BossManager.instance.totalFireSkull);
     }
 
@@ -21,12 +21,12 @@ public class FireSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         startSpawn = true;
-        Debug.Log("this is called");
+
     }
 
     private void Update()
     {
-        if (startSpawn && BossManager.instance.totalFireSkull <= 30)
+        if (startSpawn && BossManager.instance.totalFireSkull <= 60)
         {
             if (timer < spawnRate)
             {
@@ -35,7 +35,6 @@ public class FireSpawner : MonoBehaviour
             else
             {
                 Spawn();
-                Debug.Log(BossManager.instance.totalFireSkull);
                 timer = 0f;
             }
         } 

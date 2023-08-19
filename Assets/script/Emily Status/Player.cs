@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public ManaBar manaBar;
 
-    private character_movement playerMovement;
     private ShadowCaster2D shadow;
 
     Material material;
@@ -37,7 +36,6 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         manaBar.SetMana(currentMana);
 
-        playerMovement = GetComponent<character_movement>();
         shadow = GetComponent<ShadowCaster2D>();
         material = GetComponent<SpriteRenderer>().material;
         weapon = GameObject.FindGameObjectWithTag("Weapon");

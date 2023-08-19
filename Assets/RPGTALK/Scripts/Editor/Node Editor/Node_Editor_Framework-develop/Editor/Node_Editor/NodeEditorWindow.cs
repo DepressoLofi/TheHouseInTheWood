@@ -42,7 +42,7 @@ namespace NodeEditorFramework.Standard
 			return _editor;
 		}
 
-		/*
+        /*
 		/// <summary>
 		/// Assures that the canvas is opened when double-clicking a canvas asset
 		/// </summary>
@@ -58,8 +58,9 @@ namespace NodeEditorFramework.Standard
 			return false;
 		}
 		*/
-			
-		private void OnEnable()
+
+        [System.Obsolete]
+        private void OnEnable()
 		{
 			_editor = this;
 			NormalReInit();
@@ -82,6 +83,7 @@ namespace NodeEditorFramework.Standard
             EditorApplication.UnlockReloadAssemblies();
         }
 
+        [System.Obsolete]
         private void OnDestroy()
 		{
 			// Unsubscribe from events

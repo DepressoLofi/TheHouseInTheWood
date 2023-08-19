@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7091959213824372946}
   - component: {fileID: 1184997901}
   - component: {fileID: 1639462624}
+  - component: {fileID: 3656824260003034437}
   m_Layer: 3
   m_Name: Emily
   m_TagString: Emily
@@ -36,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4841149127189843532
 SpriteRenderer:
@@ -204,6 +205,7 @@ MonoBehaviour:
   currentMana: 0
   healthBar: {fileID: 0}
   manaBar: {fileID: 0}
+  die: 0
 --- !u!114 &1639462624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,4 +237,39 @@ MonoBehaviour:
   - {x: 0.18898821, y: 0.04090333, z: 0}
   m_ShapePathHash: 508697119
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2022
+  m_InstanceId: 70714
+--- !u!70 &3656824260003034437
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841149127189843533}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009199649, y: 0.78328496}
+  m_Size: {x: 0.4094829, y: 1.4025935}
+  m_Direction: 0

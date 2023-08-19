@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damageAmount = 2f;
+    public int damageAmount = 2;
     public GameObject hitEffect;
     public float effectDuration = 0.5f;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Control"))
         {
             IDamageable damageable = other.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(damageAmount); 
-                GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
-                Destroy(effect, effectDuration);
-                Destroy(gameObject);
-            }        
+                damageable.Damage(damageAmount, transform); 
+            }
+            GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
+            Destroy(effect, effectDuration);
+            Destroy(gameObject);
         }
     }
 }

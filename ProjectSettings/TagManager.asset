@@ -10,6 +10,8 @@ TagManager:
   - Skeleton
   - Weapon
   - Enemy
+  - Water
+  - Control
   layers:
   - Default
   - TransparentFX

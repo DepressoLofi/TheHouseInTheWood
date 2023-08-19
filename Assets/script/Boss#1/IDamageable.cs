@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamageable 
 {
-    void Damage(float amount);
+    void Damage(int amount, Transform bulletPosition);
 }
