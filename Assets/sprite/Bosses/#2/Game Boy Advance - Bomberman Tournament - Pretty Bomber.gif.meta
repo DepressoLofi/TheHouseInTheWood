@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 2df94cad82d14d14281b75296bb7e055
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 126
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4af3580a1cd0b449dc76e6f5ca5e30
+      internalID: -296773488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_10
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 126
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d69c8d735db96c4da6d3196bccf1cb9
+      internalID: 1576260351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 126
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f7bae0e50e6274eb10bc68d99ba473
+      internalID: 1585764720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_12
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600f7c671822bc1418b0a374cb648d10
+      internalID: -428065242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 73
+        width: 47
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282ff3caabcebd14b83280650849fce2
+      internalID: 833030447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_14
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 73
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc86659599a5e94aa40631d84e5bcb0
+      internalID: -385521259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_15
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 73
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1065692e2a97a4c9ff5d811a827eac
+      internalID: -564601347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 72
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d444e7ed0dfc3364a97a417ede737c53
+      internalID: -1751932386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d66ee77e2343ff41a31f1f9292502ec
+      internalID: 1807339342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Boy Advance - Bomberman Tournament - Pretty Bomber_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 72
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c328c98ed6943c4381f23fd8c690ff3
+      internalID: -996386398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_0: 1807339342
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_1: -996386398
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_10: 1576260351
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_11: 1585764720
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_12: -428065242
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_13: 833030447
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_14: -385521259
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_15: -564601347
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_16: -1751932386
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_17: -1719146027
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_18: 1661207086
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_19: 1591539166
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_2: -1241572447
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_20: 1408416827
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_21: -767361165
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_22: 1729953987
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_23: 312889976
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_24: 291319039
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_25: -1277108276
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_26: 1566582967
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_27: 683739682
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_28: 465464554
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_29: 164248105
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_3: -195348117
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_30: -889039022
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_31: 1246523788
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_32: 1082617471
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_33: -1910374885
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_34: 1293562078
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_35: -2022153474
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_36: -996568593
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_37: -758309570
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_38: -1936480937
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_39: -1248726228
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_4: 280031526
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_40: 1912559751
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_41: -1421620933
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_42: -922082220
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_43: 671254485
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_44: -1618004739
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_45: 100020232
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_46: -693403499
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_47: -105983077
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_48: 781750402
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_49: 1637208501
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_5: -921133221
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_50: -945917625
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_51: 107832813
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_52: 990186449
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_53: -1132344987
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_54: 1211984801
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_55: -1213042971
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_56: -1473059342
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_57: 623976304
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_58: -466766940
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_59: -635785518
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_6: -206730422
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_60: 1641986799
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_61: 2002045389
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_62: -91821230
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_63: 383458537
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_64: 1101172843
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_65: 418254226
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_66: -1146255380
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_67: 226933010
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_68: -1173110557
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_69: -1037990004
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_7: -1320100109
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_70: -874442643
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_71: -1005734261
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_72: -750149194
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_73: -782036238
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_74: -1168814952
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_75: 785563675
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_76: -1701522269
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_77: 1228429670
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_78: 1855715590
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_79: 2031121345
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_8: 1784112114
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_80: 142461868
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_81: 179257725
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_82: 1733945773
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_83: -1307864755
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_84: -467697355
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_85: 2053393193
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_86: 1212854020
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_87: -1863327718
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_88: 688966733
+      Game Boy Advance - Bomberman Tournament - Pretty Bomber_9: -296773488
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

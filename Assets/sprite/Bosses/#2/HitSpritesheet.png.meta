@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44c46154a8c69bb47aed2a802d22526e
+guid: 2f1095e738301364ab7362cbd36d80d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,106 +131,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle40x40_0
+      name: HitSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8f2235d4966fa458b83a52b663f4fa
+      internalID: -1325314575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40061313f5ddf1b4999110b3ce274adc
+      internalID: 15875346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitSpritesheet_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11efbadf1ef551b4eb7d830749dedee7
-      internalID: 1470895902
+      spriteID: 33afc8240c12ed44892bb9392b9d0565
+      internalID: 862655077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle40x40_1
+      name: HitSpritesheet_3
       rect:
         serializedVersion: 2
-        x: 40
+        x: 16
         y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 329597d32dfc6c4458d29bda422df998
-      internalID: -1930706528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle40x40_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5648f9990a08c984398b7309ab8dee93
-      internalID: 491395900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle40x40_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cd5f1234a7260c4e85164653489208b
-      internalID: -371130839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle40x40_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6d1be9cba3006044b1c74bbd6345df2
-      internalID: 739914669
+      spriteID: 1d058141f0ea1854cae732609d7aaeab
+      internalID: -1784634281
       vertices: []
       indices: 
       edges: []
@@ -246,11 +225,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle40x40_0: 1470895902
-      Idle40x40_1: -1930706528
-      Idle40x40_2: 491395900
-      Idle40x40_3: -371130839
-      Idle40x40_4: 739914669
+      HitSpritesheet_0: -1325314575
+      HitSpritesheet_1: 15875346
+      HitSpritesheet_2: 862655077
+      HitSpritesheet_3: -1784634281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

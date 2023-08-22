@@ -26,7 +26,6 @@ public class character_movement : MonoBehaviour
         transform.position = startingPosition.initialValue; 
     }
 
-
     void Update()
     {
         if (canMove && !player.die)

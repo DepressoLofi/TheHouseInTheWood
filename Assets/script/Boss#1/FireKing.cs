@@ -40,9 +40,22 @@ public class FireKing : MonoBehaviour, IDamageable
     public Transform pos5;
     public Transform pos6;
 
+    //For PatternThree Wandering motion
+    /*[SerializeField] float wanderingSpeed;
+    [SerializeField] float range;
+    [SerializeField] float maxDistance;
+    Vector2 wayPoint;
+    */
 
     //pattern changing
     private bool circling;
+    //private bool wandering;
+    //private int counter = 0;
+
+    //colliding with Emily
+    private bool canDealDamage = true;
+    private float cooldownDuration = 0.5f;
+    private float lastDamageTime = 0f;
 
     private void Start()
     {
@@ -63,9 +76,10 @@ public class FireKing : MonoBehaviour, IDamageable
     {
 
         if(circling == true)
-        {
-            PatternOne();
-        }  
+         {
+             PatternOne();
+         }  
+       // PatternThree();
     }
 
     void ShootFire()
@@ -92,6 +106,7 @@ public class FireKing : MonoBehaviour, IDamageable
 
     void PatternOne()
     {
+
         Vector3 newPosition = centerPosition.position + new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0) * radius;
 
         rb.MovePosition(newPosition);
@@ -101,14 +116,38 @@ public class FireKing : MonoBehaviour, IDamageable
         if (angle > 360)
         {
             angle -= 360;
+            //circling = false;
+
         }
     }
 
     void PatternTwo()
     {
         circling = false;
+        //wandering = true;
         StartCoroutine(MoveBetweenPositions());
     }
+
+    /*void PatternThree()
+    {
+        if (Vector2.Distance(transform.position, wayPoint) < range) 
+        {
+            SetNewDestination();
+            counter += 1;
+        } 
+       
+        transform.position = Vector2.MoveTowards(transform.position, wayPoint, wanderingSpeed * Time.deltaTime);
+        ShootFire();
+
+        if (counter> 7)
+        {
+            wandering = false;
+            transform.position = Vector2.MoveTowards(transform.position, centerPosition.position + new Vector3(Mathf.Sin(angle), Mathf.Cos(angle), 0) * radius, );
+        }
+    
+
+
+    }*/
 
     IEnumerator MoveBetweenPositions()
     {
@@ -155,6 +194,11 @@ public class FireKing : MonoBehaviour, IDamageable
         circling = true;
     }
 
+    /*void SetNewDestination()
+    {
+        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
+    }*/
+
 
     private void TakeDamage(int amount, Transform bullet)
     {
@@ -178,10 +222,23 @@ public class FireKing : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Emily"))
+        if (canDealDamage && Time.time - lastDamageTime >= cooldownDuration)
         {
-            Player emily = other.gameObject.GetComponent<Player>();
-            emily.TakeDamage(5);
+            if (other.gameObject.CompareTag("Emily"))
+            {
+                Player emily = other.gameObject.GetComponent<Player>();
+                emily.TakeDamage(5);
+
+                lastDamageTime = Time.time;
+                canDealDamage = false;
+                StartCoroutine(ResetCooldown());
+            }
         }
+    }
+
+    private System.Collections.IEnumerator ResetCooldown()
+    {
+        yield return new WaitForSeconds(cooldownDuration);
+        canDealDamage = true;
     }
 }
