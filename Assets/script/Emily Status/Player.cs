@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -26,6 +25,7 @@ public class Player : MonoBehaviour
     private GameObject weapon;
 
     public bool die = false;
+    private Collider2D[] playerColliders;
 
 
 
@@ -35,19 +35,15 @@ public class Player : MonoBehaviour
         currentMana = GameManager.Instance.emilyMana;
         healthBar.SetHealth(currentHealth);
         manaBar.SetMana(currentMana);
-
+        playerColliders = GetComponents<Collider2D>();
         shadow = GetComponent<ShadowCaster2D>();
         material = GetComponent<SpriteRenderer>().material;
         weapon = GameObject.FindGameObjectWithTag("Weapon");
+ 
     }
 
     private void Update()
     {
-
-        if(Input.GetKeyUp(KeyCode.Space)) 
-        {
-            TakeDamage(5);
-        }
 
         if (isDisolving)
         {
@@ -120,5 +116,9 @@ public class Player : MonoBehaviour
     public void Killed(bool killed)
     {
         die = killed;
+        foreach (Collider2D collider in playerColliders)
+        {
+            collider.enabled = false;
+        }
     }
 }

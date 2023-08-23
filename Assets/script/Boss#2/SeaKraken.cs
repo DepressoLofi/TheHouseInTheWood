@@ -35,6 +35,7 @@ public class SeaKraken : MonoBehaviour, IDamageable
     private bool canDealDamage = true;
     private float cooldownDuration = 0.5f;
     private float lastDamageTime = 0f;
+    public GameObject slime;
 
     private void Awake()
     {
@@ -121,9 +122,10 @@ public class SeaKraken : MonoBehaviour, IDamageable
         else
         {
             hitCount += amount;
-            if (hitCount >= 10)
+            if (hitCount >= 5)
             {
-                Debug.Log("exceed 10");
+                Instantiate(slime, shootPoint.position, transform.rotation);
+
                 hitCount = 0;
             }
         }
