@@ -1,3 +1,4 @@
+using Ink.Parsed;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,6 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     //colliding with Emily
     private bool canDealDamage = true;
     private float cooldownDuration = 0.5f;
-    private float lastDamageTime = 0f;
     private bool stop = false;
 
 
@@ -90,20 +90,31 @@ public class SlimeMinions : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canDealDamage && Time.time - lastDamageTime >= cooldownDuration)
+    
+        if (other.gameObject.CompareTag("Emily") && canDealDamage)
         {
-            if (other.gameObject.CompareTag("Emily"))
-            {
-                Player emily = other.gameObject.GetComponent<Player>();
-                emily.TakeDamage(2);
+            Player emily = other.gameObject.GetComponent<Player>();
+            emily.TakeDamage(2);
 
-                lastDamageTime = Time.time;
-                canDealDamage = false;
-                stop = true;
-                StartCoroutine(CanMoveAgain());
-                StartCoroutine(ResetCooldown());
-            }
+   
+            stop = true;
+            canDealDamage = false;
+            StartCoroutine(ResetCooldown());
+
+
         }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Emily"))
+        {
+            StartCoroutine(CanMoveAgain());
+            StartCoroutine(CanDealDamageAgain());
+        }
+
+
     }
 
     private System.Collections.IEnumerator ResetCooldown()
@@ -116,6 +127,12 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(1);
         stop = false;
+    }
+
+    private System.Collections.IEnumerator CanDealDamageAgain()
+    {
+        yield return new WaitForSeconds(1); 
+        canDealDamage = true;
     }
 
 }

@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     public bool die = false;
     private Collider2D[] playerColliders;
 
+    public Material blit;
+    float hurt = 0f;
+    float decayRate = 0.002f;
+
 
 
     void Start()
@@ -59,12 +63,23 @@ public class Player : MonoBehaviour
             }
         }
         material.SetFloat("_Fade", fade);
+        blit.SetFloat("_FullscreenIntensity", hurt);
+
+        if (hurt > 0)
+        {
+            hurt -= decayRate * Time.deltaTime; 
+            if (hurt <= 0)
+            {
+                hurt = 0; 
+            }
+        }
     }
 
 
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+        
         
 
         if (currentHealth <= 0)
@@ -76,6 +91,9 @@ public class Player : MonoBehaviour
            
 
         }
+
+        hurt += 0.002f;
+        
         healthBar.SetHealth(currentHealth);
     }
 
