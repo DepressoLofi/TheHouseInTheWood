@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     public Material blit;
     float hurt = 0f;
-    float decayRate = 0.002f;
+    float decayRate = 0.004f;
 
 
 
