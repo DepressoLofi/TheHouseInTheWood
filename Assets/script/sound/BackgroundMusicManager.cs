@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundMusicManager : MonoBehaviour
 {
@@ -26,6 +27,14 @@ public class BackgroundMusicManager : MonoBehaviour
 
         initialVolume = bgmAudioSource.volume;
 
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void FadeOutMusic()
