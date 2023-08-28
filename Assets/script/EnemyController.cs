@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         myAnim.SetBool("isMoving", true);
         myAnim.SetBool("isAttacking", false);
-        myAnim.SetBool("isDead", false);
+       
         myAnim.SetFloat("moveX", (target.position.x - transform.position.x));
         myAnim.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         myAnim.SetBool("isMoving", false);
         myAnim.SetBool("isAttacking", true);
-        myAnim.SetBool("isDead", false);
+      
     }
 
     public void GoOrigin()
@@ -64,19 +64,27 @@ public class EnemyController : MonoBehaviour
         if (Vector3.Distance(transform.position, homePos.position) == 0)
         {
             myAnim.SetBool("isMoving", false);
-            myAnim.SetBool("isDead", false);
+           
         }
     }
 
-    public void Die()
-    {
-        Debug.Log("EnemyController Die() called");
-        myAnim.SetBool("isMoving", false);
-        myAnim.SetBool("isAttacking", false);
-        myAnim.SetBool("isDead", true);
-    }
+   
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
