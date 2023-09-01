@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
     {
         playerStorage.initialValue = playerPosition;
         playerStorage.facing = facing;
+        GameManager.Instance.emilyHealth = 25;
+        GameManager.Instance.emilyMana = 20;
         SceneManager.LoadScene(level);
     }
 

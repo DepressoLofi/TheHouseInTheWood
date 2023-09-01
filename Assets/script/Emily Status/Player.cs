@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
                 isDisolving=false;
                 shadow.enabled = false;
                 Destroy(weapon);
+                StartCoroutine(LoadLevel("Dead"));
 
             }
         }
@@ -129,6 +131,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         GameManager.Instance.emilyHealth = currentHealth;
+        GameManager.Instance.emilyMana = currentMana;
     }
 
     public void Killed(bool killed)
@@ -139,4 +142,10 @@ public class Player : MonoBehaviour
             collider.enabled = false;
         }
     }
+    IEnumerator LoadLevel(string sceneToLoad) { 
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
 }

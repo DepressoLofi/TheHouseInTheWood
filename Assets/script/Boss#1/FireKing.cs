@@ -8,7 +8,7 @@ public class FireKing : MonoBehaviour, IDamageable
     public float speed = 1f;
 
     //boss Status
-    private int maxHealth = 150;
+    private int maxHealth = 125;
     private int health;
     public BossHealthBar healthBar;
     public GameObject SmokeEffect;

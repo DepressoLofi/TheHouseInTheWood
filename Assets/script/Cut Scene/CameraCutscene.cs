@@ -19,9 +19,15 @@ public class CameraCutscene : MonoBehaviour
         cameraMovement = FindObjectOfType<camera_movement>();
         timeline = GetComponent<PlayableDirector>();
         timeline.stopped += OnTimelineStopped;
-        
-        cameraMovement.InCutScene(true);
 
+    }
+
+    private void Update()
+    {
+        if (timeline.state == PlayState.Playing)
+        {
+            cameraMovement.InCutScene(true); 
+        }
     }
 
     private void OnTimelineStopped(PlayableDirector director)
