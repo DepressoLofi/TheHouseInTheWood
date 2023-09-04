@@ -15,6 +15,7 @@ public class Slime : MonoBehaviour, IDamageable
     private Transform target;
 
     public SlimeAttack slimeAttack;
+    [SerializeField]private float seeDistance;
 
 
 
@@ -30,7 +31,7 @@ public class Slime : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (!die)
+        if (!die && Vector2.Distance(transform.position, target.position) < seeDistance)
         {
             if (target != null && !player.die && !slimeAttack.stop)
             {

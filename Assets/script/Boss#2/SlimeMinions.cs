@@ -74,7 +74,6 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     public void Damage(int amount, Transform p)
     {
         TakeDamage(amount);
-
     }
 
     private IEnumerator DestroyAfterAnimation(float delay)

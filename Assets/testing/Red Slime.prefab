@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   slimeAttack: {fileID: 6942564113064957781}
+  seeDistance: 10
 --- !u!1 &6942564113064957780
 GameObject:
   m_ObjectHideFlags: 0

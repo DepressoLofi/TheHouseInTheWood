@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 199853701817854958}
   - component: {fileID: 199853701817854959}
   - component: {fileID: 199853701817854960}
+  - component: {fileID: 199853703095095074}
   m_Layer: 10
   m_Name: Wizardfire
   m_TagString: Enemy
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199853701817854954}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.37, y: 14.181, z: -0.016882608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,7 +36,7 @@ Transform:
   - {fileID: 199853703704679249}
   - {fileID: 199853702731236548}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &199853701817854956
 SpriteRenderer:
@@ -103,10 +104,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   stoppingDistance: 6
-  seeDistance: 13
+  seeDistance: 10
   player: {fileID: 0}
   shootPoint: {fileID: 199853702731236548}
-  startTimeBetweenShot: 2
+  startTimeBetweenShot: 1
   firePrefab: {fileID: 2968082658308192595, guid: 93ef7250568f51a4bbd3ed5a5d41bb1b, type: 3}
   bulletSpeed: 4
 --- !u!70 &199853701817854959
@@ -171,6 +172,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &199853703095095074
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199853701817854954}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0aa4194baccf6e045a01bdc7a27e2077, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &199853702731236547
 GameObject:
   m_ObjectHideFlags: 0
