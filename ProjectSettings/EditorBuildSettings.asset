@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/finished/SuperComplete/Dungeon of Hell.unity
     guid: e548bf05481f02a48a6e21f0ac1542f5
   - enabled: 1
-    path: Assets/Scenes/finished/Dungeon of Marine.unity
+    path: Assets/Scenes/finished/SuperComplete/Dungeon of Marine.unity
     guid: e1975eb4fab1c9749abace7796226838
   - enabled: 1
     path: Assets/Scenes/finished/Dungeon of Nature.unity
