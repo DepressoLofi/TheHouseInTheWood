@@ -15,10 +15,7 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     private Player player;
     private Transform target;
 
-    //colliding with Emily
-    private bool canDealDamage = true;
-    private float cooldownDuration = 0.5f;
-    private bool stop = false;
+    public SlimeAttack slimeAttack;
 
 
 
@@ -29,13 +26,14 @@ public class SlimeMinions : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Emily").GetComponent<Player>();
         animator = GetComponent<Animator>();
         health = maxHealth;
+
     }
 
     private void Update()
     {
         if (!die)
         {
-            if (target != null && !player.die && !stop)
+            if (target != null && !player.die && !slimeAttack.stop)
             {
                 Vector2 direction = target.position - transform.position;
 
@@ -58,10 +56,10 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
-        
-        if(health <= 0)
+
+        if (health <= 0)
         {
-            
+
             animator.SetTrigger("Dead");
             die = true;
             StartCoroutine(DestroyAfterAnimation(0.39f));
@@ -70,8 +68,6 @@ public class SlimeMinions : MonoBehaviour, IDamageable
         {
             animator.SetTrigger("Hit");
         }
-        
-
 
     }
 
@@ -88,51 +84,6 @@ public class SlimeMinions : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-    
-        if (other.gameObject.CompareTag("Emily") && canDealDamage)
-        {
-            Player emily = other.gameObject.GetComponent<Player>();
-            emily.TakeDamage(2);
-
-   
-            stop = true;
-            canDealDamage = false;
-            StartCoroutine(ResetCooldown());
-
-
-        }
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Emily"))
-        {
-            StartCoroutine(CanMoveAgain());
-            StartCoroutine(CanDealDamageAgain());
-        }
-
-
-    }
-
-    private System.Collections.IEnumerator ResetCooldown()
-    {
-        yield return new WaitForSeconds(cooldownDuration);
-        canDealDamage = true;
-    }
-
-    private System.Collections.IEnumerator CanMoveAgain()
-    {
-        yield return new WaitForSeconds(1);
-        stop = false;
-    }
-
-    private System.Collections.IEnumerator CanDealDamageAgain()
-    {
-        yield return new WaitForSeconds(1); 
-        canDealDamage = true;
-    }
 
 }
+

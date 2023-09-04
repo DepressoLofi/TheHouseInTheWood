@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     public Material blit;
     float hurt = 0f;
-    float decayRate = 0.004f;
+    float decayRate = 0.006f;
 
 
 
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
 
         }
 
-        hurt += 0.002f;
+        hurt += 0.003f;
         
         healthBar.SetHealth(currentHealth);
     }
