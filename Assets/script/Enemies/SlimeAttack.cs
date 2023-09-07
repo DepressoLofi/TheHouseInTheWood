@@ -69,7 +69,6 @@ public class SlimeAttack : MonoBehaviour
         }
         else
         {
-            Debug.Log("this work");
             attack+= Time.deltaTime;
         }
 

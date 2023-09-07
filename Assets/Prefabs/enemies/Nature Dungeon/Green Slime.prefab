@@ -186,7 +186,7 @@ Transform:
   - {fileID: 2771425830906979137}
   - {fileID: 2771425831214490284}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2771425831533729957
 SpriteRenderer:
@@ -335,5 +335,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  slimeAttack: {fileID: 0}
+  slimeAttack: {fileID: 2771425831214490282}
   seeDistance: 10

@@ -6,7 +6,7 @@ public class Slime : MonoBehaviour, IDamageable
 {
     private int health;
     private int maxHealth = 6;
-    public float speed = 3.8f;
+    public float speed = 2.8f;
     private bool die = false;
 
     private Animator animator;
@@ -55,19 +55,24 @@ public class Slime : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-
-        if (health <= 0)
+        if (!die)
         {
+            health -= damageAmount;
 
-            animator.SetTrigger("Die");
-            die = true;
-            StartCoroutine(DestroyAfterAnimation(0.6f));
+            if (health <= 0)
+            {
+
+                animator.SetTrigger("Die");
+                die = true;
+                StartCoroutine(DestroyAfterAnimation(0.6f));
+            }
+            else
+            {
+                animator.SetTrigger("Hit");
+            }
+
         }
-        else
-        {
-            animator.SetTrigger("Hit");
-        }
+
 
     }
 

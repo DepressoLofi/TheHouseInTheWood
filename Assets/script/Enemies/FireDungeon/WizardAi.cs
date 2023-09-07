@@ -93,19 +93,23 @@ public class WizardAi : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-
-        if (health <= 0)
+        if (!die)
         {
+            health -= damageAmount;
 
-            animator.SetTrigger("die");
-            die = true;
-            StartCoroutine(DestroyAfterAnimation(0.39f));
+            if (health <= 0)
+            {
+
+                animator.SetTrigger("die");
+                die = true;
+                StartCoroutine(DestroyAfterAnimation(0.39f));
+            }
+            else
+            {
+                animator.SetTrigger("hit");
+            }
         }
-        else
-        {
-            animator.SetTrigger("hit");
-        }
+
     }
 
     private IEnumerator DestroyAfterAnimation(float delay)
