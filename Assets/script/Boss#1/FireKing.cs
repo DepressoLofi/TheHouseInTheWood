@@ -23,6 +23,7 @@ public class FireKing : MonoBehaviour, IDamageable
 
     //The target - Emily
     private GameObject emily;
+    private float yOffset = 1f;
 
     // For PatternOne circular motion
     public Transform centerPosition;
@@ -84,7 +85,8 @@ public class FireKing : MonoBehaviour, IDamageable
 
     void ShootFire()
     {
-        direction = (emily.transform.position - transform.position).normalized;
+        Vector3 targetPosition = emily.transform.position + new Vector3(0f, yOffset, 0f);
+        direction = (targetPosition - transform.position).normalized;
         shootPoint.transform.up = direction;
 
 
