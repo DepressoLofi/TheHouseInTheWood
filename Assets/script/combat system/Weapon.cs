@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
-    private float shootingCooldown = 0.3f;
+    public float shootingCooldown = 0.3f;
     private float shootTimer = 0f;
 
     public float maxBulletDistance = 30f;

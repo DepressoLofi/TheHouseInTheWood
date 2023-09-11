@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int maxMana = 20;
     public int currentMana;
 
+    private character_movement emily;
 
     public HealthBar healthBar;
     public ManaBar manaBar;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        emily = GetComponent<character_movement>();
         currentHealth = GameManager.Instance.emilyHealth;
         currentMana = GameManager.Instance.emilyMana;
         healthBar.SetHealth(currentHealth);
@@ -80,23 +82,20 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        currentHealth -= dmg;
-        
-        
+        if (!emily.transitioning){
+            currentHealth -= dmg;
 
-        if (currentHealth <= 0)
-        {            
-            currentHealth = 0;
-            isDisolving = true;
-            Killed(true);
-
-           
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDisolving = true;
+                Killed(true);
+            }
+            hurt += 0.003f;
+            healthBar.SetHealth(currentHealth);
 
         }
 
-        hurt += 0.003f;
-        
-        healthBar.SetHealth(currentHealth);
     }
 
     void Maxheal()

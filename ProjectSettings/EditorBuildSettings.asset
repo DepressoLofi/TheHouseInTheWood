@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/finished/SuperComplete/office 1.unity
     guid: 1d4ea75abb5317c41a6e01e545534eaa
+  - enabled: 1
+    path: Assets/Scenes/finished/SuperComplete/BossOne.unity
+    guid: abab27bc2a4111644b8dc424c9bba96d
   m_configObjects: {}

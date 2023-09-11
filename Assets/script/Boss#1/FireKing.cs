@@ -205,7 +205,7 @@ public class FireKing : MonoBehaviour, IDamageable
     private void TakeDamage(int amount, Transform bullet)
     {
         health -= amount;
-        healthBar.SetHealth(health);
+        
         GameObject effect = Instantiate(SmokeEffect, bullet.position, bullet.rotation);
         Destroy(effect, 0.5f);
 
@@ -213,6 +213,7 @@ public class FireKing : MonoBehaviour, IDamageable
             health = 0;
             Debug.Log("boss died");
         }
+        healthBar.SetHealth(health);
 
 
     }

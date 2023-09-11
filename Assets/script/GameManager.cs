@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int emilyHealth;
     public int emilyMana;
+    public bool fire;
+    public bool water;
+    public bool nature;
+    public bool fireBoss;
+    public bool waterBoss;
 
     private void Awake()
     {

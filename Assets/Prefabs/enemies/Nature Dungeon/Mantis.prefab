@@ -285,7 +285,7 @@ MonoBehaviour:
   seeDistance: 10
   attack: 0
   attackPoint: {fileID: 2663341875102640573}
-  attackRange: 1
+  attackRange: 2
   emilyLayer:
     serializedVersion: 2
     m_Bits: 8

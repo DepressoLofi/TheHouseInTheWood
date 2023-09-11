@@ -9,7 +9,7 @@ public class character_movement : MonoBehaviour
     Vector2 movement;
     private Animator animator;
     private bool canMove = true;
-    private bool transitioning = false;
+    public bool transitioning = false;
     private Player player;
 
 
