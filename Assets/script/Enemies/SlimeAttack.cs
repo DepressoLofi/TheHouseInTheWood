@@ -34,12 +34,17 @@ public class SlimeAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Emily"))
+        if (!slime.die)
         {
-            stop = true;
-            attackRange = true;
+            if (other.gameObject.CompareTag("Emily"))
+            {
+                stop = true;
+                attackRange = true;
+
+            }
 
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)

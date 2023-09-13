@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 
 public class Weapon : MonoBehaviour
@@ -13,8 +14,12 @@ public class Weapon : MonoBehaviour
 
     public float maxBulletDistance = 30f;
 
+    [SerializeField] private camera_movement cm;
+
     private void Update()
     {
+        cm = FindObjectOfType<camera_movement>();
+
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
@@ -22,12 +27,16 @@ public class Weapon : MonoBehaviour
 
         transform.up = direction;
 
-    
-        if (Input.GetMouseButtonDown(0) && Time.time >= shootTimer)
+    if (!cm.CutScene)
         {
-            Shoot();
-            shootTimer = Time.time + shootingCooldown; 
+            if (Input.GetMouseButtonDown(0) && Time.time >= shootTimer && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Shoot();
+                shootTimer = Time.time + shootingCooldown;
+            }
+
         }
+
     }
 
     void Shoot()

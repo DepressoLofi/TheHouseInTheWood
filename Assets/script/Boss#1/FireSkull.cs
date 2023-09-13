@@ -56,7 +56,7 @@ public class FireSkull : MonoBehaviour, IDamageable
             rb.velocity = Vector3.zero;
         }
     }
-    private void Explode()
+    public void Explode()
     {
         GameObject effect =Instantiate(explosionEffect, transform.position, transform.rotation);
         

@@ -36,7 +36,7 @@ Transform:
   - {fileID: 6942564114934918941}
   - {fileID: 6942564113064957771}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6942564112842530459
 SpriteRenderer:
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  die: 0
   slimeAttack: {fileID: 6942564113064957781}
   seeDistance: 10
 --- !u!1 &6942564113064957780
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 1
   stop: 0
-  slime: {fileID: 0}
+  slime: {fileID: 6942564112842530460}
 --- !u!70 &6942564113064957768
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

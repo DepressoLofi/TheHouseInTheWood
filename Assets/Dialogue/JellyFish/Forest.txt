@@ -1,3 +1,4 @@
 Emily: What a lovely day. The sky is blue. And the flowers here are so pretty. Everything looks nice.
 Emily: Where is that little mouse going?
-Emily: I want to know where the little mouse is going. I got to follow him. 
+Emily: I want to know where the little mouse is going. I must follow him. 
+Emily: Use (w, a, s, d) to move.

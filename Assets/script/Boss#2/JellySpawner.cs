@@ -11,10 +11,13 @@ public class JellySpawner : MonoBehaviour
     [SerializeField] private float spawnRate;
     [SerializeField] private bool spawnAtStart;
 
+    private SeaKraken sk;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        sk = FindAnyObjectByType<SeaKraken>();
         if (spawnAtStart)
         {
             SpawnFish();
@@ -25,17 +28,18 @@ public class JellySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer < spawnRate)
+        if (!sk.die)
         {
-            timer += Time.deltaTime;
+            if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                SpawnFish();
+                timer = 0;
+            }
         }
-        else
-        {
-            SpawnFish();
-            timer = 0;
-        }
-
-        
     }
 
     void SpawnFish()

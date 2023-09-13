@@ -12,6 +12,7 @@ public class FireKing : MonoBehaviour, IDamageable
     private int health;
     public BossHealthBar healthBar;
     public GameObject SmokeEffect;
+    public bool die = false;
 
     //shooting
     private float timeBtwShot;
@@ -58,6 +59,8 @@ public class FireKing : MonoBehaviour, IDamageable
     private float cooldownDuration = 0.5f;
     private float lastDamageTime = 0f;
 
+    private bool startBattle;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,21 +69,33 @@ public class FireKing : MonoBehaviour, IDamageable
 
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
 
-        PatternTwo();
+        circling = false;
+        startBattle = false;
+
+        
     }
 
 
 
     void Update()
     {
+        if (!die)
+        {
+            if (startBattle == true)
+            {
+                startBattle = false;
+                PatternTwo();
 
-        if(circling == true)
-         {
-             PatternOne();
-         }  
-       // PatternThree();
+            }
+            if (circling == true)
+            {
+                PatternOne();
+            }
+            // PatternThree();
+
+        }
+
     }
 
     void ShootFire()
@@ -125,9 +140,13 @@ public class FireKing : MonoBehaviour, IDamageable
 
     void PatternTwo()
     {
-        circling = false;
+        
         //wandering = true;
         StartCoroutine(MoveBetweenPositions());
+
+        
+        
+        
     }
 
     /*void PatternThree()
@@ -192,8 +211,8 @@ public class FireKing : MonoBehaviour, IDamageable
             transform.position = Vector3.Lerp(startPos, targetPos, fraction);
             yield return null;
         }
-
         circling = true;
+
     }
 
     /*void SetNewDestination()
@@ -211,7 +230,7 @@ public class FireKing : MonoBehaviour, IDamageable
 
         if (health <= 0) { 
             health = 0;
-            Debug.Log("boss died");
+            die = true;
         }
         healthBar.SetHealth(health);
 
@@ -244,4 +263,10 @@ public class FireKing : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(cooldownDuration);
         canDealDamage = true;
     }
+
+    public void StartFight()
+    {
+        startBattle = true;
+    }
+
 }

@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
-using static UnityEditor.Rendering.CameraUI;
+
 
 public class SeaKraken : MonoBehaviour, IDamageable
 {
@@ -37,6 +33,7 @@ public class SeaKraken : MonoBehaviour, IDamageable
     private float lastDamageTime = 0f;
     public GameObject slime;
 
+    public bool die = false;
     private void Awake()
     {
         emily = GameObject.FindGameObjectWithTag("Emily");
@@ -52,12 +49,16 @@ public class SeaKraken : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
-        if(Vector2.Distance(transform.position, wayPoint) < range)
+        if (!die)
         {
-            SetNewDestination();
+            transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, wayPoint) < range)
+            {
+                SetNewDestination();
+            }
+            ShootFire();
         }
-        ShootFire();
+
 
     }
 
@@ -113,11 +114,11 @@ public class SeaKraken : MonoBehaviour, IDamageable
     private void TakeDamage(int amount)
     {
         health -= amount;
-        healthBar.SetHealth(health);
+        
         if (health <= 0)
         {
             health = 0;
-            Debug.Log("boss died");
+            die = true;
         }
         else
         {
@@ -129,9 +130,7 @@ public class SeaKraken : MonoBehaviour, IDamageable
                 hitCount = 0;
             }
         }
-
-
-
+        healthBar.SetHealth(health);
     }
 
     public void Damage(int amount, Transform bullet)

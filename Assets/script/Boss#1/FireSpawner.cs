@@ -10,11 +10,13 @@ public class FireSpawner : MonoBehaviour
     [SerializeField] private float delay = 10f;
     [SerializeField] private GameObject fireSkullPrefab;
     private bool startSpawn = false;
+    private FireKing fk;
 
    private void Start()
     {
+        fk = FindObjectOfType<FireKing>();
         StartCoroutine(StartSpawningAfterDelay(delay));
-        Debug.Log(BossManager.instance.totalFireSkull);
+        
     }
 
     private IEnumerator StartSpawningAfterDelay(float delay)
@@ -26,7 +28,7 @@ public class FireSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (startSpawn && BossManager.instance.totalFireSkull <= 60)
+        if (startSpawn && BossManager.instance.totalFireSkull <= 60 && !fk.die)
         {
             if (timer < spawnRate)
             {

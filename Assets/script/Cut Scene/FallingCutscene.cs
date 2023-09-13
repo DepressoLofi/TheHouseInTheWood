@@ -8,19 +8,14 @@ using UnityEngine.SceneManagement;
 public class FallingCutscene : MonoBehaviour
 {
     [SerializeField] private camera_movement cameraMovement;
-
     private PlayableDirector timeline;
     
-
-
 
     private void Start()
     {
         cameraMovement = FindObjectOfType<camera_movement>();
         timeline = GetComponent<PlayableDirector>();
         timeline.stopped += OnTimelineStopped;
-      
-
     }
 
     private void Update()
@@ -40,10 +35,6 @@ public class FallingCutscene : MonoBehaviour
     IEnumerator LoadLevel(string sceneToLoad)
     {
         yield return new WaitForSeconds(0.5f);
-
         SceneManager.LoadScene(sceneToLoad);
     }
-
-
-
 }

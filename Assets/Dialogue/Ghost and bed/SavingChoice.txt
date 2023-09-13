@@ -1,0 +1,11 @@
+Diary Ghost: [question=0] Would you like to save your progress?
+[Choice] Yes  [newtalk start=sayYes break=sayYes_End]
+[Choice] No   [newtalk start=yes break=no]
+
+[title=sayYes]
+Diary Ghost: Your progress has been saved.
+[title=answeredYes_end]
+
+[title=yes]
+Diary Ghost: Your progress has been saved.
+[title=no]

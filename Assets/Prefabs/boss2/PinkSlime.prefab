@@ -217,7 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.8
-  slimeAttack: {fileID: 199280479609872515}
+  die: 0
+  slimeAttack: {fileID: 9100866757838348490}
 --- !u!58 &7653779147340426559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -262,8 +263,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8165789504837172945}
-  - component: {fileID: 199280479609872515}
   - component: {fileID: 3590754930272719944}
+  - component: {fileID: 9100866757838348490}
   m_Layer: 10
   m_Name: HitBox
   m_TagString: Untagged
@@ -286,21 +287,6 @@ Transform:
   m_Father: {fileID: 7653779147340426499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &199280479609872515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868832497463459993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7540d38ad5b908f468c7c24e88bef905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSpeed: 1
-  stop: 0
-  slime: {fileID: 0}
 --- !u!70 &3590754930272719944
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -336,3 +322,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0026807145, y: 0.45946884}
   m_Size: {x: 1.1876198, y: 0.1050172}
   m_Direction: 1
+--- !u!114 &9100866757838348490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8868832497463459993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa92199a54d87349ae3c913d456fd57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  stop: 0
+  slimeMinions: {fileID: 7653779147340426556}

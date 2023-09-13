@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     float hurt = 0f;
     float decayRate = 0.006f;
 
+    private camera_movement cm;
+    private AudioSource sfx;
 
 
     void Start()
@@ -46,11 +48,19 @@ public class Player : MonoBehaviour
         shadow = GetComponent<ShadowCaster2D>();
         material = GetComponent<SpriteRenderer>().material;
         weapon = GameObject.FindGameObjectWithTag("Weapon");
+        cm = FindObjectOfType<camera_movement>();
+        sfx = GetComponent<AudioSource>();
  
     }
 
     private void Update()
     {
+        /*
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(3);
+        }
+        */
 
         if (isDisolving)
         {
@@ -82,8 +92,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        if (!emily.transitioning){
+        if (!emily.transitioning && !cm.CutScene){
             currentHealth -= dmg;
+            sfx.Play();
 
             if (currentHealth <= 0)
             {
@@ -98,9 +109,15 @@ public class Player : MonoBehaviour
 
     }
 
-    void Maxheal()
+    public void Maxheal()
     {
+        while(currentHealth < maxHealth)
+        {
+            currentHealth += 1;
+            healthBar.SetHealth(currentHealth);
+        }
         currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
     }
 
     void heal(int amount)

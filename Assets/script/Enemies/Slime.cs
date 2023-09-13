@@ -7,7 +7,7 @@ public class Slime : MonoBehaviour, IDamageable
     private int health;
     private int maxHealth = 6;
     public float speed = 2.8f;
-    private bool die = false;
+    public bool die = false;
 
     private Animator animator;
     private Rigidbody2D rb;

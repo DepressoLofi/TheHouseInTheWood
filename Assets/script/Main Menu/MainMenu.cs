@@ -19,6 +19,12 @@ public class MainMenu : MonoBehaviour
         playerStorage.facing = facing;
         GameManager.Instance.emilyHealth = 25;
         GameManager.Instance.emilyMana = 20;
+        GameManager.Instance.fire = false;
+        GameManager.Instance.water = false;
+        GameManager.Instance.nature = false;
+        GameManager.Instance.fireBoss = false;
+        GameManager.Instance.waterBoss = false;
+
         SceneManager.LoadScene(level);
     }
 

@@ -8,14 +8,16 @@ public class SlimeMinions : MonoBehaviour, IDamageable
     private int health;
     private int maxHealth = 6;
     public float speed = 3.8f;
-    private bool die = false;
+    public bool die = false;
 
     private Animator animator;
     private Rigidbody2D rb;
     private Player player;
     private Transform target;
 
-    public SlimeAttack slimeAttack;
+    public SlimeHitBoxPink slimeAttack;
+
+    private SeaKraken sk;
 
 
 
@@ -26,6 +28,7 @@ public class SlimeMinions : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Emily").GetComponent<Player>();
         animator = GetComponent<Animator>();
         health = maxHealth;
+        sk = FindAnyObjectByType<SeaKraken>();
 
     }
 
@@ -50,6 +53,16 @@ public class SlimeMinions : MonoBehaviour, IDamageable
         {
             rb.velocity = Vector3.zero;
         }
+        if(sk != null)
+        {
+            if (sk.die)
+            {
+                animator.SetTrigger("Dead");
+                die = true;
+                StartCoroutine(DestroyAfterAnimation(0.39f));
+            }
+        }
+
     }
 
 
