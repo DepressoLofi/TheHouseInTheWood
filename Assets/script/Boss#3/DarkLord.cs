@@ -10,7 +10,7 @@ public class DarkLord : MonoBehaviour, IDamageable
 
 
     //the boss status
-    private int maxHealth = 200;
+    private int maxHealth = 200; //200
     private int health;
     public BossHealthBar healthBar;
 
@@ -24,6 +24,8 @@ public class DarkLord : MonoBehaviour, IDamageable
     private float centerPointY = 4f;
     private float radiusY = 2.5f;
     private float counter = 10;
+
+    public bool die = false;
 
 
 
@@ -54,6 +56,7 @@ public class DarkLord : MonoBehaviour, IDamageable
     void Update()
     {
         FacingDirection();
+
     }
 
 
@@ -118,15 +121,20 @@ public class DarkLord : MonoBehaviour, IDamageable
 
     private void TakeDamage(int amount)
     {
-        health -= amount;
-        
-        if (health <= 0)
+        if (!die)
         {
-            health = 0;
+            health -= amount;
+
+            if (health <= 0)
+            {
+                health = 0;
+                die = true;
+                animator.SetTrigger("BossDie");
+            }
+            healthBar.SetHealth(health);
+
+
         }
-        healthBar.SetHealth(health);
-
-
     }
 
     public void Damage(int amount, Transform bullet)

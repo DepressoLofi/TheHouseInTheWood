@@ -62,4 +62,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/finished/ToLastBoss.unity
     guid: 8f09ee25880155f4c8ab063e089b228b
+  - enabled: 1
+    path: Assets/Scenes/finished/End.unity
+    guid: ecae9dc459816f44c8fa81ad733ac725
+  - enabled: 1
+    path: Assets/Scenes/finished/SuperComplete/entrance 2.unity
+    guid: d3e885e68f84f994ead499a2657dc781
+  - enabled: 1
+    path: Assets/Scenes/finished/SuperComplete/entrance 3.unity
+    guid: 65587d3576490024189967b2275ce7a9
+  - enabled: 1
+    path: Assets/Scenes/finished/SuperComplete/entrance 1.unity
+    guid: fc5061378ae8fff499aa38674a67b7b4
   m_configObjects: {}

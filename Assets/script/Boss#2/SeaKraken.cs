@@ -34,6 +34,10 @@ public class SeaKraken : MonoBehaviour, IDamageable
     public GameObject slime;
 
     public bool die = false;
+
+    public bool StartBattle = false;
+    public bool startPointSet = false;
+
     private void Awake()
     {
         emily = GameObject.FindGameObjectWithTag("Emily");
@@ -44,19 +48,29 @@ public class SeaKraken : MonoBehaviour, IDamageable
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         hitCount = 0;
-        SetNewDestination();
     }
 
     private void Update()
     {
         if (!die)
         {
-            transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, wayPoint) < range)
+            if (StartBattle)
             {
+                StartBattle = false;
                 SetNewDestination();
+                startPointSet = true;
             }
-            ShootFire();
+
+            if(startPointSet) 
+            {
+                transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
+                if (Vector2.Distance(transform.position, wayPoint) < range)
+                {
+                    SetNewDestination();
+                }
+                ShootFire();
+            }
+           
         }
 
 
@@ -119,6 +133,7 @@ public class SeaKraken : MonoBehaviour, IDamageable
         {
             health = 0;
             die = true;
+            GameManager.Instance.waterBoss = true;
         }
         else
         {
@@ -136,6 +151,11 @@ public class SeaKraken : MonoBehaviour, IDamageable
     public void Damage(int amount, Transform bullet)
     {
         TakeDamage(amount);
+    }
+
+    public void StartTheBattle()
+    {
+        StartBattle = true;
     }
 
 }

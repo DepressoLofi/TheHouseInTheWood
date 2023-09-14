@@ -231,6 +231,7 @@ public class FireKing : MonoBehaviour, IDamageable
         if (health <= 0) { 
             health = 0;
             die = true;
+            GameManager.Instance.fireBoss = true;
         }
         healthBar.SetHealth(health);
 

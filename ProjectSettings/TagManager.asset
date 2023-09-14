@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Water
   - Control
+  - EndingSong
   layers:
   - Default
   - TransparentFX

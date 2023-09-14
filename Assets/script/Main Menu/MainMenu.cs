@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
         playerStorage.initialValue = playerPosition;
         playerStorage.facing = facing;
         GameManager.Instance.emilyHealth = 25;
-        GameManager.Instance.emilyMana = 20;
         GameManager.Instance.fire = false;
         GameManager.Instance.water = false;
         GameManager.Instance.nature = false;

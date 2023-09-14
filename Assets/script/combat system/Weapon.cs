@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
 
     public float maxBulletDistance = 30f;
 
+    public bool canShoot = true;
+
     [SerializeField] private camera_movement cm;
 
     private void Update()
@@ -27,7 +29,7 @@ public class Weapon : MonoBehaviour
 
         transform.up = direction;
 
-    if (!cm.CutScene)
+    if (!cm.CutScene && canShoot)
         {
             if (Input.GetMouseButtonDown(0) && Time.time >= shootTimer && !EventSystem.current.IsPointerOverGameObject())
             {
@@ -50,5 +52,15 @@ public class Weapon : MonoBehaviour
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
 
         Destroy(bullet, maxBulletDistance / bulletForce);
+    }
+
+    public void EnableToShoot()
+    {
+        canShoot = true;
+    }
+    public void DisableToShoot()
+    {
+        canShoot = false;
+
     }
 }

@@ -18,9 +18,10 @@ public class DarkLordClone : MonoBehaviour
     private float centerPointY = 4f;
     private float radiusY = 2.5f;
 
-    private float counter = 10f; 
+    private float counter = 10f;
 
 
+    private bool diePlayed = false;
 
 
     // the boss movinbg side
@@ -47,6 +48,11 @@ public class DarkLordClone : MonoBehaviour
     void Update()
     {
         FacingDirection();
+        if(dk.die && !diePlayed)
+        {
+            diePlayed = true;
+            animator.SetTrigger("MainDie");
+        }
     }
 
 

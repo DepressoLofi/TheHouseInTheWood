@@ -10,13 +10,10 @@ public class Player : MonoBehaviour
     public int maxHealth = 25;
     public int currentHealth;
 
-    public int maxMana = 20;
-    public int currentMana;
-
     private character_movement emily;
 
     public HealthBar healthBar;
-    public ManaBar manaBar;
+
 
     private ShadowCaster2D shadow;
 
@@ -41,9 +38,7 @@ public class Player : MonoBehaviour
     {
         emily = GetComponent<character_movement>();
         currentHealth = GameManager.Instance.emilyHealth;
-        currentMana = GameManager.Instance.emilyMana;
         healthBar.SetHealth(currentHealth);
-        manaBar.SetMana(currentMana);
         playerColliders = GetComponents<Collider2D>();
         shadow = GetComponent<ShadowCaster2D>();
         material = GetComponent<SpriteRenderer>().material;
@@ -129,25 +124,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    void MaxMana()
-    {
-        currentMana = maxMana;
-    }
 
-    void PickMana(int amount)
-    {
-        currentMana += amount;
-        if (currentMana >= maxMana)
-        {
-            currentMana = maxMana;
-        }
-    }
 
 
     private void OnDisable()
     {
         GameManager.Instance.emilyHealth = currentHealth;
-        GameManager.Instance.emilyMana = currentMana;
+
     }
 
     public void Killed(bool killed)

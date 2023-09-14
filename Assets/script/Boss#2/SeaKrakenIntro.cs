@@ -25,7 +25,7 @@ public class SeaKrakenIntro : MonoBehaviour
 
     private void OnTimelineStopped(PlayableDirector director)
     {
-        sk.enabled = true;
+        sk.StartTheBattle();
         
         bossInfo.SetActive(true);
         if (backgroundMusic != null)
